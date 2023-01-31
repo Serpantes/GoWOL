@@ -9,9 +9,10 @@ COPY go.sum ./
 
 RUN go mod download
 
-COPY . ./
+COPY / ./
 
+RUN go build
 
-RUN go build .
+EXPOSE 9898
 
-CMD [ "main" ]
+CMD ["./GoWOL"]
