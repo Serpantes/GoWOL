@@ -11,6 +11,7 @@ import (
 type Conf struct {
 	LogLevel     string
 	ServerHost   string
+	BroadcastMask string
 }
 
 var Config Conf
@@ -38,6 +39,7 @@ func InitConfig() {
 	//set up variables from env values
 	Config.LogLevel = os.Getenv("LOG_LEVEL")
 	Config.ServerHost = os.Getenv("SERVER_HOST")
+	Config.BroadcastMask = os.Getenv("BROADCAST_MASK")
 	log.Debug("Config inited")
 }
 
