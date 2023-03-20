@@ -37,7 +37,7 @@ func wakeHandler(w http.ResponseWriter, r *http.Request){
 	log.Info("Waking up ", mac, " (",target,")")
 
 	if packet, err := wol.NewMagicPacket(mac); err == nil {
-		packet.Send("255.255.255.255") // send to broadcast
+		packet.Send("192.168.100.255") // send to broadcast
 		//	packet.SendPort("255.255.255.255", "7") // specify receiving port
 	} else {
 		log.Error(err.Error())
